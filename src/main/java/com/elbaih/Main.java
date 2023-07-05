@@ -1,4 +1,6 @@
-package com.elbaih;public class Main {
+package com.elbaih;
+
+public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
