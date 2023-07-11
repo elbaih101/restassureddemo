@@ -9,20 +9,41 @@ import io.restassured.specification.RequestSpecification;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.Map;
 
-public class RestAssuredExtension
+  public class RestAssuredExtension
 {
     public static RequestSpecification request;
     public RestAssuredExtension()
     {
         RequestSpecBuilder builder= new RequestSpecBuilder();
-        builder.setBaseUri("http://zippopotam.us");
+        builder.setBaseUri("http://localhost:3001/");
         builder.setContentType(ContentType.JSON);
         var requestspec =builder.build();
         request= RestAssured.given().spec(requestspec);
+        request.log().all();
     }
-public static void getLocationWithPathParams(String url, Map<String,String> pathparams){
+
+
+    public  ResponseOptions<Response> authenticat(String url,String username,String password)
+    {
+        HashMap<String,String> authcontent=new HashMap<>();
+        authcontent.put("username",username);
+        authcontent.put("password",password);
+
+        request.contentType(ContentType.JSON);
+        request.body(authcontent);
+        request.log().all();
+        try {
+            return request.post(new URI(url));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+public  void getwithPathParams(String url, Map<String,String> pathparams){
         request.pathParams(pathparams);
     try {
         request.get(new URI(url));
@@ -32,7 +53,7 @@ public static void getLocationWithPathParams(String url, Map<String,String> path
 
 
 }
-    public static ResponseOptions<Response> getLocation(String url){
+    public  ResponseOptions<Response> getRequest(String url){
         try {
            return request.get(new URI(url));
         } catch (URISyntaxException e) {

@@ -6,8 +6,9 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.*;
 import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
-import org.testng.asserts.SoftAssert;
-import com.elbaih.stepDefs.Hooks;
+
+import static com.elbaih.stepDefs.Hooks.assrt;
+import static com.elbaih.stepDefs.Hooks.restAssuredExtension;
 
 public class Api_Test {
 
@@ -18,9 +19,10 @@ public class Api_Test {
 
      */
     Response response;
+
     Location location;
 
-   final SoftAssert assrt =new SoftAssert();
+
     private static final String BASE_URL = "http://zippopotam.us";
     ResponseSpecification responsespec;
 
@@ -31,7 +33,7 @@ public class Api_Test {
 //        response= given().spec(requestspec)./*pathParam("countrycode",arg0).pathParam("zipcode",arg1).*/log().all().when().
 //                get("/"+arg0+"/"+arg1);
         //using  pojos and Rest Assured Liberarry WE created
-       response= (Response) Hooks.restAssuredExtension.getLocation("/"+arg0+"/"+arg1);
+       response= (Response) restAssuredExtension.getRequest("/"+arg0+"/"+arg1);
 
         location=  response.getBody().as(Location.class);
 

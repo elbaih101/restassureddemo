@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="using deserilaizaTION">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Hooks.java" afterDir="false" />
+    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="creating a liberarry and organizing the code">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/Api_TEst.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/Api_TEst.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Api_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Api_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Hooks.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -46,20 +52,21 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: client request for the us time zone">
-    <configuration name="Scenario: client request for the us time zone" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Scenario: user login and can get booking and create booking" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Api_TEst.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
       <option name="GLUE" value="com.elbaih.stepDefs" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="Rest_Assured_demo" />
-      <option name="NAME_FILTER" value="^client request for the us time zone$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^client request for the us time zone$&quot;" />
+      <option name="NAME_FILTER" value="^user login and can get booking and create booking$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^user login and can get booking and create booking$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: client request for the us time zone" />
+      <option name="SUGGESTED_NAME" value="Scenario: user login and can get booking and create booking" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -69,34 +76,19 @@
       </extension>
       <method v="2">
         <option name="MakeProject" enabled="true" />
-        <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestRunner" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Rest_Assured_demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.elbaih.testRunner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.elbaih.testRunner" />
-      <option name="MAIN_CLASS_NAME" value="com.elbaih.testRunner.TestRunner" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <shortenClasspath name="NONE" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
+        <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Cucumber Java.Scenario: client request for the us time zone" />
-      <item itemvalue="TestNG.TestRunner" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: client request for the us time zone" />
-        <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: user login and can get booking and create booking" />
       </list>
     </recent_temporary>
   </component>
@@ -130,14 +122,52 @@
       <option name="project" value="LOCAL" />
       <updated>1688999965799</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="creating a liberarry and organizing the code">
+      <created>1689082430144</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1689082430144</updated>
+    </task>
+    <task id="LOCAL-00005" summary="creating a liberarry and organizing the code">
+      <created>1689098373934</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689098373935</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="restful_booker_branch" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first try" />
     <MESSAGE value="agter asserting the body" />
     <MESSAGE value="using deserilaizaTION" />
-    <option name="LAST_COMMIT_MESSAGE" value="using deserilaizaTION" />
+    <MESSAGE value="creating a liberarry and organizing the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating a liberarry and organizing the code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
