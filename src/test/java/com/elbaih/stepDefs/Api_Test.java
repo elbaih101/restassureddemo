@@ -1,19 +1,14 @@
 package com.elbaih.stepDefs;
 import com.elbaih.jsonOpjects.Location;
-import com.elbaih.jsonOpjects.Place;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.*;
-import static org.hamcrest.Matchers.*;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.asserts.SoftAssert;
 import com.elbaih.stepDefs.Hooks;
 
-import static io.restassured.RestAssured.*;
 public class Api_Test {
 
     /*using Rest Assured as it is
@@ -25,7 +20,7 @@ public class Api_Test {
     Response response;
     Location location;
 
-   SoftAssert assrt =new SoftAssert();
+   final SoftAssert assrt =new SoftAssert();
     private static final String BASE_URL = "http://zippopotam.us";
     ResponseSpecification responsespec;
 
