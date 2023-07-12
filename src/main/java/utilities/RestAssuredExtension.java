@@ -43,6 +43,23 @@ import java.util.Map;
         return null;
     }
 
+    public  ResponseOptions<Response> GetBooking(String url)
+    {
+        try {
+            return request.get(new URI(url));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+            return null;
+    }
+public ResponseOptions<Response> GetBookingByPathParam(String url,HashMap<String,String> pathparam)
+{
+       request.pathParams(pathparam);
+
+      return   request.get(url);
+
+}
+
 public  void getwithPathParams(String url, Map<String,String> pathparams){
         request.pathParams(pathparams);
     try {

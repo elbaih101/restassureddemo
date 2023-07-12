@@ -1,4 +1,5 @@
 package com.elbaih.stepDefs;
+
 import com.elbaih.jsonOpjects.Location;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -33,13 +34,11 @@ public class Api_Test {
 //        response= given().spec(requestspec)./*pathParam("countrycode",arg0).pathParam("zipcode",arg1).*/log().all().when().
 //                get("/"+arg0+"/"+arg1);
         //using  pojos and Rest Assured Liberarry WE created
-       response= (Response) restAssuredExtension.getRequest("/"+arg0+"/"+arg1);
+        response = (Response) restAssuredExtension.getRequest("/" + arg0 + "/" + arg1);
 
-        location=  response.getBody().as(Location.class);
+        location = response.getBody().as(Location.class);
 
     }
-
-
 
 
     @Then("the response must return code {int} andcontent type of {string}")
@@ -50,8 +49,8 @@ public class Api_Test {
 
 
         //using  pojos
-       responsespec = new ResponseSpecBuilder().expectStatusCode(code).expectContentType(ContentType.JSON).build();
-       response.then().spec(responsespec).and().log().body();
+        responsespec = new ResponseSpecBuilder().expectStatusCode(code).expectContentType(ContentType.JSON).build();
+        response.then().spec(responsespec).and().log().body();
 
 
     }
@@ -62,7 +61,7 @@ public class Api_Test {
 //        response.then().assertThat().body("places[0].'place name'",equalTo(arg0));
 
         //using  pojos
-        assrt.assertEquals(arg0,location.getPlaces().get(0).getPlaceName());
+        assrt.assertEquals(arg0, location.getPlaces().get(0).getPlaceName());
         assrt.assertAll();
     }
 
@@ -71,16 +70,16 @@ public class Api_Test {
         //using Rest Assured Response
 //        response.then().assertThat().body("places[0].state",equalTo(arg0));
         //using  pojos
-        assrt.assertEquals(location.getPlaces().get(0).getState(),arg0);
+        assrt.assertEquals(location.getPlaces().get(0).getState(), arg0);
         assrt.assertAll();
     }
 
     @Then("check whether the collection places has item {string}")
     public void checkWhetherTheCollectionPlacesHasItem(String arg0) {
-           //using Rest Assured Response
+        //using Rest Assured Response
 //        response.then().assertThat().body("places.'state abbreviation'",hasItem(arg0));
 
-           //using  pojos
+        //using  pojos
         location.getPlaces().forEach(place -> assrt.assertTrue(place.getStateAbbreviation().contains(arg0)));
 
         assrt.assertAll();
