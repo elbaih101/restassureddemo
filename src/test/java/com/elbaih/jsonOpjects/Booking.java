@@ -1,25 +1,29 @@
 package com.elbaih.jsonOpjects;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import groovy.transform.ToString;
 
 import java.util.List;
 
-@JsonPropertyOrder({"firstname","lastname","totalprice","depositpaid","bookingdates","additionalneeds"})
+@JsonPropertyOrder({"firstname", "lastname", "totalprice", "depositpaid", "bookingdates", "additionalneeds"})
 public class Booking {
 
 
-    String ID;
-    String firstname;
-    String lastname;
+    private String ID;
+    private String firstname;
+    private String lastname;
 
-    int totalprice;
+    private int totalprice;
 
-    String depositpaid;
-    BookingDates bookingdates;
-    String additionalneeds;
-    public  Booking(){}
-    public Booking(String id){
-        this.ID=id;
+    private String depositpaid;
+    private BookingDates bookingdates;
+    private String additionalneeds;
+
+    public Booking() {
+    }
+
+    public Booking(String id) {
+        this.ID = id;
     }
 
     public Booking(String firstname, String lastname, int totalprice, String depositpaid, BookingDates bookingdates, String additionalneeds) {
@@ -31,6 +35,7 @@ public class Booking {
 
         this.additionalneeds = additionalneeds;
     }
+
     public Booking(String firstname, String lastname, int totalprice, String depositpaid, BookingDates bookingdates) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -38,6 +43,7 @@ public class Booking {
         this.depositpaid = depositpaid;
         this.bookingdates = bookingdates;
     }
+
     public String getID() {
         return ID;
     }
@@ -62,7 +68,7 @@ public class Booking {
         this.lastname = lastname;
     }
 
-    public int getTotalprice() {
+    public Integer getTotalprice() {
         return totalprice;
     }
 
@@ -78,8 +84,9 @@ public class Booking {
         this.depositpaid = depositpaid;
     }
 
-    public BookingDates getBookingdates() {
-        return bookingdates;
+    public String getBookingdates() {
+         String s= bookingdates.getBookingDates();
+         return s;
     }
 
     public void setBookingdates(BookingDates bookingdates) {
@@ -94,16 +101,19 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
-    public void getBooking(){
-        getID();
-        getFirstname();
-        getLastname();
-        getTotalprice();
-        getDepositpaid();
-        getBookingdates();
+    public String getBooking() {
+        String s =
+        getID().toString()+"\n"+
+        getFirstname().toString()+"\n"+
+        getLastname().toString()+"\n"+
+        getDepositpaid().toString()+"\n"+
+        getTotalprice().toString()+"\n"+
+        getBookingdates().toString()+"\n"+
         getAdditionalneeds();
-    }
 
+        return s;
+
+    }
 
 
 }

@@ -2,13 +2,15 @@ package com.elbaih.jsonOpjects;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import java.util.List;
+
 @JsonPropertyOrder({"checkin","checkout"})
 public class BookingDates {
 
 
 
-    String checkin;
-    String checkout;
+   private String checkin;
+   private String checkout;
     public BookingDates(){}
 
     public BookingDates(String checkin, String checkout) {
@@ -30,5 +32,11 @@ public class BookingDates {
 
     public void setCheckout(String checkout) {
         this.checkout = checkout;
+    }
+    public String getBookingDates()
+    { String s=
+        getCheckin().toString()+"\n"+ getCheckout().toString();
+
+        return s;
     }
 }

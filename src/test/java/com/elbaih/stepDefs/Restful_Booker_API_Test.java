@@ -61,7 +61,7 @@ public class Restful_Booker_API_Test {
     @Then("response is returned with the booking infos")
     public void responseIsReturnedWithTheBookingInfos() {
 
-        System.out.println(booking.getID()+booking.getFirstname());
+        System.out.println(booking.getBooking());
 
 
     }
