@@ -2,6 +2,9 @@
 package com.elbaih.stepDefs;
 
 import com.elbaih.jsonOpjects.Booking;
+import com.elbaih.jsonOpjects.BookingDates;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -61,12 +64,31 @@ public class Restful_Booker_API_Test {
     @Then("response is returned with the booking infos")
     public void responseIsReturnedWithTheBookingInfos() {
 
-        System.out.println(booking.getBooking());
+        System.out.println(booking.toString());
 
 
     }
 
 
+
+
+    @When("posting a request with data as {string} {string} {string} {string} {string} {string} {string}")
+    public void postingARequestWithDataAs(String firstname, String lastname, String totalprice, String depositpaid, String checkin, String checkout, String additionalneeds) {
+
+        BookingDates dates=new BookingDates(checkin,checkout);
+        Booking bodypojo =new Booking(firstname,lastname,totalprice,depositpaid,dates,additionalneeds);
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            String body =mapper.writerWithDefaultPrettyPrinter().writeValueAsString(bodypojo);
+            restAssuredExtension.postRequest("/booking",body);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Then("its ok")
+    public void itsOk() {
+    }
 }
 
 

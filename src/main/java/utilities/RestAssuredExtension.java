@@ -1,5 +1,6 @@
 package utilities;
 
+
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -12,7 +13,8 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
-  public class RestAssuredExtension
+
+public class RestAssuredExtension
 {
     public static RequestSpecification request;
     public RestAssuredExtension()
@@ -77,6 +79,21 @@ public  void getwithPathParams(String url, Map<String,String> pathparams){
             e.printStackTrace();
         }
         return null ;
+}
+
+public ResponseOptions<Response> postRequest(String url, String body){
+
+
+    request.contentType(ContentType.JSON);
+    request.body(body);
+    request.log().all();
+    try {
+        return request.post(new URI(url));
+    } catch (URISyntaxException e) {
+        e.printStackTrace();
+    }
+    return null;
+
 }
 
 }

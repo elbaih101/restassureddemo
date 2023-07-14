@@ -33,10 +33,12 @@ public class BookingDates {
     public void setCheckout(String checkout) {
         this.checkout = checkout;
     }
-    public String getBookingDates()
-    { String s=
-        getCheckin().toString()+"\n"+ getCheckout().toString();
 
-        return s;
+    @Override
+    public String toString() {
+        return "BookingDates{" +
+                "checkin='" + checkin + '\'' +
+                ", checkout='" + checkout + '\'' +
+                '}';
     }
 }
