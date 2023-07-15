@@ -1,7 +1,7 @@
 Feature: testing api for restfull Booker
-
+Background:
+  Given authenticating with path param "/auth" using user name "admin" and password "password123"
   Scenario: user login and can get booking and create booking
-    Given authenticating with path param "/auth" using user name "admin" and password "password123"
     When sending get "/booking" Request
     Then REsponse returns with Booking Ids
 
@@ -17,3 +17,11 @@ Feature: testing api for restfull Booker
          |firstname|lastname|totalprice|depositpaid|checkin|checkout|additionalneeds|
          |mohamed  |aly     |300       |true       |2018-01-01|2019-01-01|Breakfast|
 
+
+       Scenario Outline: dleting an entery
+         When sending delete request with url "/booking/{id}" and "<id>" and body with "authentication"
+         Then a succsefull status code 201 is returned
+         And when sending a get request with url "/booking/{id}" and "<id>" response body is empty
+         Examples:
+         |id|
+         |14 |

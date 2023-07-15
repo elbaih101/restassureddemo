@@ -3,24 +3,16 @@ package com.elbaih.stepDefs;
 
 import com.elbaih.jsonOpjects.Booking;
 import com.elbaih.jsonOpjects.BookingDates;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import io.restassured.response.ResponseOptions;
-import io.restassured.specification.RequestSpecification;
-import utilities.RestAssuredExtension;
-
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-
-
-import static com.elbaih.stepDefs.Hooks.assrt;
 import static com.elbaih.stepDefs.Hooks.restAssuredExtension;
+import static org.hamcrest.Matchers.*;
 
 public class Restful_Booker_API_Test {
     static Response response;
@@ -33,7 +25,7 @@ public class Restful_Booker_API_Test {
     public void authenticatingWithPathParamUsingUserNameAndPassword(String auth, String username, String pass) {
         response = (Response) restAssuredExtension.authenticat(auth, username, pass);
         response.then().log().body();
-        token = response.getBody().jsonPath().get("token");
+        this.token = response.getBody().jsonPath().get("token");
     }
 
     @When("sending get {string} Request")
@@ -96,6 +88,29 @@ public class Restful_Booker_API_Test {
     public void itsOk() {
         response.then().assertThat().statusCode(200);
     }
+
+    @When("sending delete request with url {string} and {string} and body with {string}")
+    public void sendingDeleteRequestWithUrlAndAndBodyWith(String url, String id,String token) {
+       token= this.token;
+        HashMap<String,String> pathparam =new HashMap<>();
+        pathparam.put("id",id);
+        response=(Response) restAssuredExtension.deleteRequest(url,pathparam,token);
+    }
+
+    @Then("a succsefull status code {int} is returned")
+    public void aSuccsefullStatusCodeIsReturned(int successcode) {
+        response.then().assertThat().statusCode(successcode);
+    }
+
+    @And("when sending a get request with url {string} and {string} response body is empty")
+    public void whenSendingAGetRequestWithUrlAndResponseBodyIsEmpty(String url, String id) {
+        HashMap<String,String> pathparam=new HashMap<>();
+        pathparam.put("id",id);
+ response=(Response) restAssuredExtension.GetBookingByPathParam(url,pathparam);
+response.then().assertThat().body(equalTo("Not Found"));
+    }
+
+
 }
 
 
