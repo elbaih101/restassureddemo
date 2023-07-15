@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="reparing the pojo getter for the class">
+    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="creating a succesful post request with body">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/BookingDates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/BookingDates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689254504896</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="creating a succesful post request with body">
+      <created>1689372063367</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689372063367</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,7 +277,8 @@
     <MESSAGE value="creating auth request and extacting token" />
     <MESSAGE value="creating get request and deserializing the response body" />
     <MESSAGE value="reparing the pojo getter for the class" />
-    <option name="LAST_COMMIT_MESSAGE" value="reparing the pojo getter for the class" />
+    <MESSAGE value="creating a succesful post request with body" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating a succesful post request with body" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -283,5 +289,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Rest_Assured_demo$Scenario__posting_a_booking_request.ic" NAME="Scenario: posting a booking request Coverage Results" MODIFIED="1689424444011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>io.cucumber.core.cli.*</FILTER>
+    </SUITE>
   </component>
 </project>

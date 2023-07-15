@@ -81,7 +81,7 @@ public  void getwithPathParams(String url, Map<String,String> pathparams){
         return null ;
 }
 
-public ResponseOptions<Response> postRequest(String url, String body){
+public ResponseOptions<Response> postRequest(String url, Object body){
 
 
     request.contentType(ContentType.JSON);

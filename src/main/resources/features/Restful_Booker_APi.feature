@@ -15,5 +15,5 @@ Feature: testing api for restfull Booker
         Then its ok
        Examples:
          |firstname|lastname|totalprice|depositpaid|checkin|checkout|additionalneeds|
-         |mohamed  |aly     |300       |true       |2018-01-01|2019-01-01||
+         |mohamed  |aly     |300       |true       |2018-01-01|2019-01-01|Breakfast|
 

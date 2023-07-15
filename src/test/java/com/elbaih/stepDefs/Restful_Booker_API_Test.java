@@ -74,20 +74,27 @@ public class Restful_Booker_API_Test {
 
     @When("posting a request with data as {string} {string} {string} {string} {string} {string} {string}")
     public void postingARequestWithDataAs(String firstname, String lastname, String totalprice, String depositpaid, String checkin, String checkout, String additionalneeds) {
-
         BookingDates dates=new BookingDates(checkin,checkout);
         Booking bodypojo =new Booking(firstname,lastname,totalprice,depositpaid,dates,additionalneeds);
+        //                Using an object mapper method
+
+        /*  String body;
+
         ObjectMapper mapper = new ObjectMapper();
         try {
-            String body =mapper.writerWithDefaultPrettyPrinter().writeValueAsString(bodypojo);
-            restAssuredExtension.postRequest("/booking",body);
+             body =mapper.writerWithDefaultPrettyPrinter().writeValueAsString(bodypojo);
+
         } catch (JsonProcessingException e) {
             e.printStackTrace();
-        }
+        }*/
+        //                 using restassured built in serializer depemded on jackson
+       response=(Response) restAssuredExtension.postRequest("/booking",bodypojo);
+
     }
 
     @Then("its ok")
     public void itsOk() {
+        response.then().assertThat().statusCode(200);
     }
 }
 
