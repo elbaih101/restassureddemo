@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="creating a succesful post request with body using rest assured bult in mapper">
+    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="sending delete request with a cookie token and confirming deleting of the entery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,31 +65,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.smartKeys&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: dleting an entery">
-    <configuration name="Feature: Restful_Booker_APi" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
-      <option name="GLUE" value="com.elbaih.stepDefs" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Rest_Assured_demo" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Feature: Restful_Booker_APi" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="MakeProject" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Cucumber Java.Scenario: update request">
     <configuration name="Scenario: dleting an entery" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
@@ -155,6 +135,28 @@
         <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: update request" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
+      <option name="GLUE" value="com.elbaih.stepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Rest_Assured_demo" />
+      <option name="NAME_FILTER" value="^update request$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^update request$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: update request" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="MakeProject" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Scenario: user login and can get booking and create booking" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
@@ -186,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: update request" />
         <item itemvalue="Cucumber Java.Scenario: dleting an entery" />
         <item itemvalue="Cucumber Java.Scenario: posting a booking request" />
         <item itemvalue="Cucumber Java.Scenario: user login and can get booking and create booking" />
         <item itemvalue="Cucumber Java.Scenario: getting bookings with id" />
-        <item itemvalue="Cucumber Java.Feature: Restful_Booker_APi" />
       </list>
     </recent_temporary>
   </component>
@@ -273,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689426261715</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="sending delete request with a cookie token and confirming deleting of the entery">
+      <created>1689443507672</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689443507672</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,7 +318,8 @@
     <MESSAGE value="reparing the pojo getter for the class" />
     <MESSAGE value="creating a succesful post request with body" />
     <MESSAGE value="creating a succesful post request with body using rest assured bult in mapper" />
-    <option name="LAST_COMMIT_MESSAGE" value="creating a succesful post request with body using rest assured bult in mapper" />
+    <MESSAGE value="sending delete request with a cookie token and confirming deleting of the entery" />
+    <option name="LAST_COMMIT_MESSAGE" value="sending delete request with a cookie token and confirming deleting of the entery" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -318,17 +328,6 @@
           <properties class="java.net.ConnectException" package="java.net" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java</url>
-          <line>93</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java</url>
-          <line>20</line>
-          <properties field="token" class="com.elbaih.stepDefs.Restful_Booker_API_Test" />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

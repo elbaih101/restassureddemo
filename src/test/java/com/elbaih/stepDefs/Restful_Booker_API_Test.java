@@ -11,6 +11,8 @@ import io.restassured.response.Response;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
+
+import static com.elbaih.stepDefs.Hooks.assrt;
 import static com.elbaih.stepDefs.Hooks.restAssuredExtension;
 import static org.hamcrest.Matchers.*;
 
@@ -36,21 +38,21 @@ public class Restful_Booker_API_Test {
     @Then("REsponse returns with Booking Ids")
     public void responseReturnsWithBookingIds() {
 
-       ids = response.getBody().jsonPath().getList("bookingid");
+        ids = response.getBody().jsonPath().getList("bookingid");
         System.out.println(ids.size());
 
     }
 
     @When("sending a get Request with path param{string} and {string}")
     public void sendingAGetRequestWithPathParamAnd(String booking, String id) {
-        Random random=new Random();
-      id = "1";// ids.get(random.nextInt(0,ids.size()));
-        HashMap<String,String > pathparam= new HashMap<>();
-        pathparam.put("id",id);
+        Random random = new Random();
+        id = "1";// ids.get(random.nextInt(0,ids.size()));
+        HashMap<String, String> pathparam = new HashMap<>();
+        pathparam.put("id", id);
 
-     response=(Response) restAssuredExtension.GetBookingByPathParam(booking,pathparam);
-       this.booking= response.getBody().as(Booking.class);
-       this.booking.setID(id);
+        response = (Response) restAssuredExtension.GetBookingByPathParam(booking, pathparam);
+        this.booking = response.getBody().as(Booking.class);
+        this.booking.setID(id);
     }
 
     @Then("response is returned with the booking infos")
@@ -62,12 +64,10 @@ public class Restful_Booker_API_Test {
     }
 
 
-
-
     @When("posting a request with data as {string} {string} {string} {string} {string} {string} {string}")
     public void postingARequestWithDataAs(String firstname, String lastname, String totalprice, String depositpaid, String checkin, String checkout, String additionalneeds) {
-        BookingDates dates=new BookingDates(checkin,checkout);
-        Booking bodypojo =new Booking(firstname,lastname,totalprice,depositpaid,dates,additionalneeds);
+        BookingDates dates = new BookingDates(checkin, checkout);
+        Booking bodypojo = new Booking(firstname, lastname, totalprice, depositpaid, dates, additionalneeds);
         //                Using an object mapper method
 
         /*  String body;
@@ -80,7 +80,7 @@ public class Restful_Booker_API_Test {
             e.printStackTrace();
         }*/
         //                 using restassured built in serializer depemded on jackson
-       response=(Response) restAssuredExtension.postRequest("/booking",bodypojo);
+        response = (Response) restAssuredExtension.postRequest("/booking", bodypojo);
 
     }
 
@@ -90,24 +90,42 @@ public class Restful_Booker_API_Test {
     }
 
     @When("sending delete request with url {string} and {string} and body with {string}")
-    public void sendingDeleteRequestWithUrlAndAndBodyWith(String url, String id,String token) {
-       token= this.token;
-        HashMap<String,String> pathparam =new HashMap<>();
-        pathparam.put("id",id);
-        response=(Response) restAssuredExtension.deleteRequest(url,pathparam,token);
+    public void sendingDeleteRequestWithUrlAndAndBodyWith(String url, String id, String token) {
+        token = this.token;
+        HashMap<String, String> pathparam = new HashMap<>();
+        pathparam.put("id", id);
+        response = (Response) restAssuredExtension.deleteRequest(url, pathparam, token);
     }
 
     @Then("a succsefull status code {int} is returned")
     public void aSuccsefullStatusCodeIsReturned(int successcode) {
-        response.then().assertThat().statusCode(successcode);
+        assrt.assertTrue(response.getStatusCode() == successcode);
+//        response.then().assertThat().statusCode(successcode);
+        assrt.assertAll();
+
     }
 
-    @And("when sending a get request with url {string} and {string} response body is empty")
+    @When("when sending a get request with url {string} and {string} response body is empty")
     public void whenSendingAGetRequestWithUrlAndResponseBodyIsEmpty(String url, String id) {
-        HashMap<String,String> pathparam=new HashMap<>();
-        pathparam.put("id",id);
- response=(Response) restAssuredExtension.GetBookingByPathParam(url,pathparam);
-response.then().assertThat().body(equalTo("Not Found"));
+        HashMap<String, String> pathparam = new HashMap<>();
+        pathparam.put("id", id);
+        response = (Response) restAssuredExtension.GetBookingByPathParam(url, pathparam);
+        assrt.assertEquals(response.body().asString(), "Not Found");
+        assrt.assertAll();
+//         response.then().assertThat().body(equalTo("Not Found"));
+    }
+
+    @When("sending put request for booking {string} {string} with data as {string} {string} {string} {string} {string} {string} {string}")
+    public void sendingPutRequestForBookingWithDataAs(String url, String id, String firstname, String lastname, String totalprice, String depositpaid, String checkin, String checkout, String additionalneeds) {
+        BookingDates dates = new BookingDates(checkin, checkout);
+        Booking bodypojo = new Booking(firstname, lastname, totalprice, depositpaid, dates, additionalneeds);
+        bodypojo.setID(id);
+        HashMap<String, String> pathparam = new HashMap<>();
+        pathparam.put("id", id);
+      response = (Response) restAssuredExtension.updateRequest(url,bodypojo,pathparam,this.token);
+      response.then().statusCode(200);
+      assrt.assertTrue(bodypojo.toString().contains(response.body().asString()));
+
     }
 
 

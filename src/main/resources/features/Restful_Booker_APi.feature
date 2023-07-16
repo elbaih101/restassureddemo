@@ -20,8 +20,20 @@ Background:
 
        Scenario Outline: dleting an entery
          When sending delete request with url "/booking/{id}" and "<id>" and body with "authentication"
-         Then a succsefull status code 201 is returned
-         And when sending a get request with url "/booking/{id}" and "<id>" response body is empty
+         Then a succsefull status code 200 is returned
          Examples:
-         |id|
-         |14 |
+           |id|
+           |6|
+         Scenario Outline: confirming deletion of a deleted entery
+           When when sending a get request with url "/booking/{id}" and "<id>" response body is empty
+           Examples:
+             |id|
+             |6|
+
+           Scenario Outline: update request
+             When sending put request for booking "/booking/{id}" "<id>" with data as "<firstname>" "<lastname>" "<totalprice>" "<depositpaid>" "<checkin>" "<checkout>" "<additionalneeds>"
+
+
+             Examples:
+              |id|firstname|lastname|totalprice|depositpaid|checkin|checkout|additionalneeds|
+              |1|mohamed  |aly     |300       |true       |2018-01-01|2019-01-01|Breakfast|

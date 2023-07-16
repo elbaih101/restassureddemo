@@ -10,7 +10,7 @@ import java.util.List;
 @JsonPropertyOrder({"ID","firstname", "lastname", "totalprice", "depositpaid", "bookingdates", "additionalneeds"})
 public class Booking {
 
-
+@JsonIgnore
     private String ID;
     private String firstname;
     private String lastname;
