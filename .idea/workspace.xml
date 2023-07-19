@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="sending delete request with a cookie token and confirming deleting of the entery">
+    <list default="true" id="73720d37-261e-4d9e-b13d-00955a582f88" name="Changes" comment="creating an update request and asserting it">
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtensionV2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilities/RestAssuredExtension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/jsonOpjects/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/elbaih/stepDefs/Restful_Booker_API_Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: update request">
+  <component name="RunManager" selected="Cucumber Java.Scenario: user login and can get booking and create booking">
     <configuration name="Scenario: dleting an entery" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
@@ -79,28 +78,6 @@
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^dleting an entery$&quot;" />
       <shortenClasspath name="NONE" />
       <option name="SUGGESTED_NAME" value="Scenario: dleting an entery" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="MakeProject" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: getting bookings with id" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
-      <option name="GLUE" value="com.elbaih.stepDefs" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="Rest_Assured_demo" />
-      <option name="NAME_FILTER" value="^getting bookings with id$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^getting bookings with id$&quot;" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: getting bookings with id" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -178,6 +155,28 @@
         <option name="MakeProject" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: " type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/main/resources/features/Restful_Booker_APi.feature" />
+      <option name="GLUE" value="com.elbaih.stepDefs" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Rest_Assured_demo" />
+      <option name="NAME_FILTER" value="^$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: " />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="MakeProject" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
       <shortenClasspath name="NONE" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
@@ -188,11 +187,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Scenario: user login and can get booking and create booking" />
+        <item itemvalue="Cucumber Java.Scenario: " />
         <item itemvalue="Cucumber Java.Scenario: update request" />
         <item itemvalue="Cucumber Java.Scenario: dleting an entery" />
         <item itemvalue="Cucumber Java.Scenario: posting a booking request" />
-        <item itemvalue="Cucumber Java.Scenario: user login and can get booking and create booking" />
-        <item itemvalue="Cucumber Java.Scenario: getting bookings with id" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689443507672</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="creating an update request and asserting it">
+      <created>1689534893035</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689534893035</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,17 +325,8 @@
     <MESSAGE value="creating a succesful post request with body" />
     <MESSAGE value="creating a succesful post request with body using rest assured bult in mapper" />
     <MESSAGE value="sending delete request with a cookie token and confirming deleting of the entery" />
-    <option name="LAST_COMMIT_MESSAGE" value="sending delete request with a cookie token and confirming deleting of the entery" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.net.ConnectException" package="java.net" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="creating an update request and asserting it" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating an update request and asserting it" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Rest_Assured_demo$Scenario__posting_a_booking_request.ic" NAME="Scenario: posting a booking request Coverage Results" MODIFIED="1689424444011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

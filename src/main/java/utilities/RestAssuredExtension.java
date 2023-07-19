@@ -61,16 +61,6 @@ public class RestAssuredExtension {
 
     }
 
-    public void getwithPathParams(String url, Map<String, String> pathparams) {
-        request.pathParams(pathparams);
-        try {
-            request.get(new URI(url));
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
     public ResponseOptions<Response> getRequest(String url) {
         try {
@@ -105,7 +95,6 @@ public class RestAssuredExtension {
     }
 
     public ResponseOptions<Response> updateRequest(String url, Object body,HashMap<String,String>pathparam,String token) {
-
 
         request.contentType(ContentType.JSON);
         request.accept("application/json");

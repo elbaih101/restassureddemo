@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import utilities.RestAssuredExtensionV2;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
@@ -24,10 +26,17 @@ public class Restful_Booker_API_Test {
     Hooks hooks = new Hooks();
 
     @Given("authenticating with path param {string} using user name {string} and password {string}")
-    public void authenticatingWithPathParamUsingUserNameAndPassword(String auth, String username, String pass) {
-        response = (Response) restAssuredExtension.authenticat(auth, username, pass);
-        response.then().log().body();
-        this.token = response.getBody().jsonPath().get("token");
+    public void authenticatingWithPathParamUsingUserNameAndPassword(String authuri, String username, String pass) {
+        RestAssuredExtensionV2 restAssuredExtensionV2=new RestAssuredExtensionV2(authuri, RestAssuredExtensionV2.APIMethods.Post,null);
+        HashMap<String,String>body=new HashMap<>();
+        body.put("username", username);
+        body.put("password", pass);
+  this.token= restAssuredExtensionV2.authenticat(body);
+
+
+//        response = (Response) restAssuredExtension.authenticat(auth, username, pass);
+//        response.then().log().body();
+//        this.token = response.getBody().jsonPath().get("token");
     }
 
     @When("sending get {string} Request")
